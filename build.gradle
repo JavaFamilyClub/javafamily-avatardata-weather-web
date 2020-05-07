@@ -1,0 +1,63 @@
+buildscript {
+   ext {
+      springVersion = '5.1.8.RELEASE'
+      swaggerVersion = "2.9.2"
+      jacksonVersion = '2.10.3'
+      logbackVersion = '1.2.3'
+      jupiterVersion = '5.6.2'
+      jfUtilsVersion = '0.1.1'
+      jfWeatherVersion = '0.1.0.RELEASE'
+   }
+}
+
+plugins {
+   id 'java'
+}
+
+group = 'club.javafamily'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+   jcenter()
+   mavenCentral()
+}
+
+dependencies {
+   // javafamily
+   // weather
+   implementation "club.javafamily:javafamily-avatardata-weather:${jfWeatherVersion}"
+
+   // utils
+   implementation "club.javafamily:javafamily-utils:${jfUtilsVersion}"
+
+   // spring
+   implementation "org.springframework:spring-core:${springVersion}"
+   implementation "org.springframework:spring-beans:${springVersion}"
+   implementation "org.springframework:spring-context:${springVersion}"
+   implementation "org.springframework:spring-context-support:${springVersion}"
+
+   // swagger
+   implementation "io.springfox:springfox-swagger2:${swaggerVersion}"
+   implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+
+   // logging
+   implementation "ch.qos.logback:logback-classic:${logbackVersion}"
+
+   // test
+   testImplementation "org.junit.jupiter:junit-jupiter-api:${jupiterVersion}"
+   testImplementation "org.junit.jupiter:junit-jupiter-params:${jupiterVersion}"
+   testImplementation "org.junit.jupiter:junit-jupiter-engine:${jupiterVersion}"
+   testImplementation "org.springframework:spring-test:${springVersion}"
+}
+
+test {
+   useJUnitPlatform()
+   testLogging {
+      events "passed", "skipped", "failed"
+   }
+}
+
+wrapper {
+   gradleVersion '6.2.1'
+}
