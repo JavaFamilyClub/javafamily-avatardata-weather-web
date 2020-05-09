@@ -8,6 +8,7 @@ import org.springframework.context.annotation.*;
 public class WeatherConfiguration {
    /**
     * Singleton weather query engine
+    * @return Query Engine for Weather
     */
    @Bean
    public WeatherQueryEngine weatherQueryEngine() {

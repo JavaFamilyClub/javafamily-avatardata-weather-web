@@ -1,6 +1,6 @@
-package club.javafamily.avatardata.weather.web;
+package club.javafamily.avatardata.weather.web.controller;
 
-import club.javafamily.model.WeatherVO;
+import club.javafamily.vo.WeatherVO;
 import club.javafamily.weather.query.WeatherQueryEngine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
