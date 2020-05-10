@@ -10,7 +10,7 @@ public class WeatherConfiguration {
     * Singleton weather query engine
     * @return Query Engine for Weather
     */
-   @Bean
+   @Bean("weatherQueryEngine")
    public WeatherQueryEngine weatherQueryEngine() {
       return new WeatherQueryEngine();
    }
